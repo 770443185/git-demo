@@ -22,6 +22,6 @@ export default {
         justify-content: space-between;
         flex-wrap: wrap;
         background-color: #fff;
-        padding: 0.267vw
+        padding: 0 1.333vw
     }
 </style>

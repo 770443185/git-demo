@@ -1,13 +1,15 @@
 <template>
   <div>
     <index-head :user_Img="userInfoModel.user_img" />
-    <Scroll :click="true" :pulldown="false" top="12.533vw" >
+    <Scroll :click="true" :pulldown="false" top="12.533vw">
       <div class="content">
         <video-play :videourl="videoInfoModel" />
         <dl class="videoinfo" :key="videoID">
           <dt>
             <div class="info-name">
-              <em><van-icon name="fire" />热门</em>
+              <em v-if='videoInfoModel.category'
+                ><van-icon name="fire" />{{ videoInfoModel.category.title }}</em
+              >
               <span>
                 {{ videoInfoModel.name }}
               </span>
@@ -179,8 +181,8 @@ export default {
     },
     async fetchAlldate() {
       await this.fetchVideoInfo();
-      await this.fetchUserInfo();
       await this.fetchCommend();
+      await this.fetchUserInfo();
       this.checkCollection();
       this.checkAttention();
     },

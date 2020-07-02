@@ -75,7 +75,6 @@ export default {
       setTimeout(() => {
         this.$toast("刷新成功");
         this.isLoading = false;
-        console.log("刷新中");
       }, 1000);
     },
   },
@@ -87,7 +86,6 @@ export default {
   },
   watch: {
     isRefresh(){
-      console.log('dom结构 发生改变了')
       this.scroll.refresh();
     }
   },
